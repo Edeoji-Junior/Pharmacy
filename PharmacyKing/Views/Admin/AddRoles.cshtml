@@ -1,0 +1,137 @@
+﻿@model List<Microsoft.AspNetCore.Identity.IdentityRole>
+@{
+    ViewData["Title"] = "AddRoles";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<!-- Page Wrapper -->
+<div class="page-wrapper">
+
+	<!-- Page Content -->
+	<div class="content container-fluid">
+
+		<!-- Page Header -->
+		<div class="page-header">
+			<div class="row align-items-center">
+				<div class="col">
+					<h3 class="page-title">Roles</h3>
+					<ul class="breadcrumb">
+						<li class="breadcrumb-item"><a  asp-controller="admin" asp-action="AddRoles">Dashboard</a></li>
+						<li class="breadcrumb-item active">Roles</li>
+					</ul>
+				</div>
+				<div class="col-auto float-right ml-auto">
+					<a href="#" class="btn add-btn" data-toggle="modal" data-target="#add_Role"><i class="fa fa-plus"></i> Add Role</a>
+				</div>
+			</div>
+		</div>
+		<!-- /Page Header -->
+
+		<div class="row">
+			<div class="col-md-12">
+				<div class="table-responsive">
+					<table class="table table-striped custom-table mb-0 datatable">
+						<thead>
+							<tr>
+@* 								<th>S/N</th> *@
+								<th>Name</th>
+								<th class="text-right">Actions</th>
+							</tr>
+						</thead>
+						@if (Model != null &&  Model.Any())
+						{
+							<tbody>
+								@foreach (var role in Model)
+								{
+									<tr>
+										<td>@role.Name</td>
+										<td class="text-right">
+											<div class="dropdown dropdown-action">
+												<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
+												<div class="dropdown-menu dropdown-menu-right">
+													<a href="#" class="dropdown-item" data-toggle="modal" data-target="#editRoleModal" onclick="editRoles('@role.Id')"><i class="fa fa-pencil m-r-5"></i> Edit</a>
+													<a  href="#" class="dropdown-item" data-toggle="modal" data-target="#delete_job" onclick="delteRoles('@role.Id')"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
+												</div>
+											</div>
+										</td>
+									</tr>
+								}
+							</tbody>
+						}
+						else
+						{
+							<tr>
+								<td colspan="3">NO Data Found</td>
+							</tr>
+						}
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /Page Content -->
+
+
+	<!-- Add Role Modal -->
+	<div id="add_Role" class="modal custom-modal fade" role="dialog">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Add Role</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form asp-controller="Admin" asp-action="AddRole" method="post">
+						<div class="form-group">
+							<label>Role Name <span class="text-danger">*</span></label>
+							<input type="text" class="form-control" id="name" name="Name">
+						</div>
+						
+						<div class="submit-section">
+							<button class="btn btn-primary submit-btn">Save</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /Add role Modal -->
+</div>
+<!-- /Page Wrapper -->
+
+
+<!-- Edit Role Modal -->
+<div class="modal custom-modal fade" id="editRoleModal" role="dialog">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Edit Role</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<div class="form-class">
+					<!-- Assuming you want to display the role ID but keep it hidden -->
+					<div class="form-group">
+						<input id="editRoleId" type="hidden" />
+					</div>
+
+					<div class="form-group">
+						<label for="editRoleName">Name <span class="text-danger">*</span></label>
+						<input class="form-control" type="text" id="editRoleName">
+					</div>
+
+					<div class="submit-section">
+						<button class="btn btn-primary submit-btn" onclick="saveEditedRole()">Save</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- /Edit Holiday Modal -->

@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PharmacyKing", "PharmacyKing.csproj", "{06AA4D27-9E89-41CB-AD96-6F8950D3A925}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "..\Core\Core.csproj", "{451EBEF4-ED6A-4B9D-B52E-B8C2D1CA4A75}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logic", "..\Logic\Logic.csproj", "{509ECE3D-0B18-4C3C-9D76-FEB9F10CD54D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{06AA4D27-9E89-41CB-AD96-6F8950D3A925}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06AA4D27-9E89-41CB-AD96-6F8950D3A925}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06AA4D27-9E89-41CB-AD96-6F8950D3A925}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06AA4D27-9E89-41CB-AD96-6F8950D3A925}.Release|Any CPU.Build.0 = Release|Any CPU
+		{451EBEF4-ED6A-4B9D-B52E-B8C2D1CA4A75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{451EBEF4-ED6A-4B9D-B52E-B8C2D1CA4A75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{451EBEF4-ED6A-4B9D-B52E-B8C2D1CA4A75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{451EBEF4-ED6A-4B9D-B52E-B8C2D1CA4A75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{509ECE3D-0B18-4C3C-9D76-FEB9F10CD54D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{509ECE3D-0B18-4C3C-9D76-FEB9F10CD54D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{509ECE3D-0B18-4C3C-9D76-FEB9F10CD54D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{509ECE3D-0B18-4C3C-9D76-FEB9F10CD54D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {36AA0A1E-E69F-46A5-9A6E-77BB4BF89EBB}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewData["Title"] = "EmailVerify";
+    Layout = "~/Views/Shared/_HomePageLayout.cshtml";
+}
+
+
+<!-- Main Wrapper -->
+<div class="main-wrapper" id="gMarginTop" style="min-height:600px; margin-top: 60px;"">
+    <div class="row pt-5">
+        <div class="card col-md-5 rounded m-auto">
+            <div class="error-box">
+                <h3 class="text-center">Your account has been activated! </h3>
+                <p>Thank you for activating your account, You can now log in to continue.</p>
+                <div class="form-group text-center">
+                    <a asp-controller="Account" asp-action="Login" class="btn btn-primary account-btn form-control w-25 text-white" style="border-radius:20px;">Login</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Main Wrapper -->

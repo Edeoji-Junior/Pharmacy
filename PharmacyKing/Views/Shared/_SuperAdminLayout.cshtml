@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+	<title>@ViewData["Title"] - PharmacyKing</title>
+	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+	<link rel="stylesheet" href="~/PharmacyKing.styles.css" asp-append-version="true" />
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-4L0T265PLR"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'G-4L0T265PLR');
+	</script>
+
+	<script>
+		function errorAlert(message) {
+			Swal.fire({
+				icon: 'error',
+				text: message,
+			})
+		}
+
+		function infoAlert(message) {
+			Swal.fire({
+				icon: 'info',
+				text: message,
+			})
+		}
+
+		function infoAlertWithStyles(message) {
+			Swal.fire({
+				title: 'Notification',
+				icon: 'info',
+				text: message,
+			})
+		}
+
+		function successAlert(message) {
+			Swal.fire({
+				icon: 'success',
+				text: message,
+			})
+		}
+
+		function newErrorAlert(message, url) {
+			Swal.fire({
+				icon: 'error',
+				text: message,
+			}).then((isConfirm) => {
+				if (isConfirm) {
+					location.reload(url);
+				}
+			})
+		}
+
+		function newSuccessAlert(message, url) {
+			Swal.fire({
+				icon: 'success',
+				text: message,
+			}).then((isConfirm) => {
+				if (isConfirm) {
+					location.reload(url);
+				}
+			})
+
+		}
+
+		function successAlertWithRedirect(message, url) {
+			swal.fire({
+				title: "Success",
+				text: message,
+				icon: "info",
+				timer: "30000",
+				overlay: "background - color: rgba(43, 165, 137, 0.45)",
+			}).then(function () {
+
+				location.href = url;
+			})
+		}
+	</script>
+	@RenderSection("Scripts", required: false)
+
+</head>
+<body>
+    <div>
+        @RenderBody()
+    </div>
+
+
+	<script src="~/js/pharmacy.js"></script>
+</body>
+</html>

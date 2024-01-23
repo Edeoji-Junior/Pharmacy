@@ -1,0 +1,16 @@
+﻿using Core.Viewmodels;
+using Microsoft.AspNetCore.Identity;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Logic.IHelper
+{
+    public interface IAdminHelper
+    {
+		Task<IdentityRole> CreateRole(RoleViewModel model);
+        IdentityRole EditRoleName(RoleViewModel roleViewModel, Guid roleId);
+	}
+}
